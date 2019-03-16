@@ -1,3 +1,4 @@
+import driver.FriendDriver;
 import driver.MEFDriver;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.util.ToolRunner;
@@ -10,6 +11,10 @@ public class Runner {
         /*启动wordCount算法
        oolRunner.run(conf, new WordCountDriver(), args);
         */
-        ToolRunner.run(conf, new MEFDriver(), args);
+        /*启动移动平均算法
+        * ToolRunner.run(conf, new MEFDriver(), args);
+        * */
+        conf.set("mapreduce.framework.name","yarn");
+        ToolRunner.run(conf, new FriendDriver(), args);
     }
 }

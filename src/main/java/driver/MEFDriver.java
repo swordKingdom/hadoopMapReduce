@@ -23,7 +23,7 @@ public class MEFDriver extends Configured implements Tool {
         job.setMapOutputValueClass(MEFCompositeData.class);
         job.setOutputValueClass(Text.class);
 
-        job.setJar("D:\\Users\\25873\\IdeaProjects\\myFirstMvnProj\\out\\artifacts\\myFirstMvnProj_jar\\myFirstMvnProj.jar");
+        job.setJar("D:\\Users\\25873\\IdeaProjects\\hadoopMapReduce\\classes\\artifacts\\hadoopMapReduce_jar\\hadoopMapReduce.jar");
 
         FileInputFormat.addInputPath(job,new Path("/data/input1.txt"));
         FileSystem fs= FileSystem.get(conf);
