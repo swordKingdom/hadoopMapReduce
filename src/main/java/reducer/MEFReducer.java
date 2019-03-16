@@ -1,6 +1,6 @@
 package reducer;
 
-import compositekey.MEFCompositeData;
+import composite.MEFCompositeData;
 import org.apache.commons.collections.IteratorUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.io.Text;

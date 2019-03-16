@@ -1,6 +1,6 @@
 package driver;
 
-import compositekey.MEFCompositeData;
+import composite.MEFCompositeData;
 import mapper.MEFMapper;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;

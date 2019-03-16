@@ -1,4 +1,4 @@
-package compositekey;
+package composite;
 
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;

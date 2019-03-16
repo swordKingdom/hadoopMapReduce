@@ -1,6 +1,6 @@
 package mapper;
 
-import compositekey.MEFCompositeData;
+import composite.MEFCompositeData;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 
