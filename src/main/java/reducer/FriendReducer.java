@@ -22,27 +22,32 @@ public class FriendReducer extends Reducer<FriendCompositeKey, FriendCompositeDa
         Set<Integer> relationTwo = new TreeSet<Integer>();
         Iterator<FriendCompositeData> iterator = values.iterator();
         int count = 0;
-        if (iterator.hasNext()) {
-            Integer[] data = iterator.next().getValue();
-            if (count == 0) {
-                for (Integer v : data) {
-                    relationOne.add(v);
+        while (true){
+            if (iterator.hasNext()) {
+                Integer[] data = iterator.next().getValue();
+                if (count == 0) {
+                    for (Integer v : data) {
+                        relationOne.add(v);
+                    }
                 }
-            }
 
-            if (count == 1) {
-                for (Integer v : data) {
-                    relationTwo.add(v);
+                if (count == 1) {
+                    for (Integer v : data) {
+                        relationTwo.add(v);
+                    }
                 }
+                count++;
+            }else {
+                break;
             }
-            count++;
         }
+
         System.out.println("get reduce data");
         System.out.println(key);
         System.out.println(relationOne);
         System.out.println(relationTwo);
         Set<Integer> commonFriend = tool.CommonFriend.intersection(relationOne, relationTwo);
-        if (commonFriend != null) {
+        if (commonFriend != null&& commonFriend.size() != 0) {
             Text resultKey = new Text();
             resultKey.set(key.toString());
             Text resultValue = new Text();

@@ -58,4 +58,9 @@ public class FriendCompositeKey  implements Writable, WritableComparable<FriendC
     public String toString() {
         return this.personOneId+","+this.personTwoId;
     }
+
+    @Override
+    public int hashCode() {
+        return personOneId.hashCode()*31 + personTwoId;
+    }
 }
