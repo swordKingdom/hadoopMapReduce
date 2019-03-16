@@ -14,7 +14,7 @@ import org.apache.hadoop.util.Tool;
 
 import reducer.WordCountReducer;
 
-public class wordCountDriver extends Configured implements Tool {
+public class WordCountDriver extends Configured implements Tool {
     public int run(String[] strings) throws Exception {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf);

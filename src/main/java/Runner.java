@@ -7,6 +7,9 @@ public class Runner {
     public static void main(String[] args ) throws Exception {
         Configuration conf = new Configuration();
         //使用ToolRunner的run方法对自定义的类型进行处理
+        /*启动wordCount算法
+       oolRunner.run(conf, new WordCountDriver(), args);
+        */
         ToolRunner.run(conf, new MEFDriver(), args);
     }
 }
