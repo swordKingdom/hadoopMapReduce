@@ -1,6 +1,6 @@
 package driver;
 
-import mapper.MyMapper;
+import mapper.WordCountMapper;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
@@ -12,15 +12,15 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 
-import reducer.MyReducer;
+import reducer.WordCountReducer;
 
 public class wordCountDriver extends Configured implements Tool {
     public int run(String[] strings) throws Exception {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf);
         //wordCount的代码类
-        job.setMapperClass(MyMapper.class);
-        job.setReducerClass(MyReducer.class);
+        job.setMapperClass(WordCountMapper.class);
+        job.setReducerClass(WordCountReducer.class);
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(LongWritable.class);
         job.setOutputKeyClass(Text.class);
